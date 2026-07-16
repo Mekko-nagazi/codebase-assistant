@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import { validatePath } from "../core/project.js";
+import { scanFSProject } from "../core/scanner.js";
 
 // Описываем тип опций, которые приходят в команду ask
 type AskOptions = {
@@ -21,9 +22,11 @@ function handleAsk(question: string, options: AskOptions):
 void {
   try {
     const projectPath = validatePath(options.path)
+    const projectFiles = scanFSProject(projectPath)
 
     console.log("Question:", question);
     console.log("Project path:", projectPath);
+    console.log("Project files", projectFiles)
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
