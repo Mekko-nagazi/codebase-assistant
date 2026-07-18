@@ -1,19 +1,19 @@
 #!/usr/bin/env node
-// импортируем класс Command
 import { Command } from "commander";
 import { registerAskCommand } from "./commands/ask.js";
+import { registerScanCommand } from "./commands/scan.js";
 
-// создаём CLI-прогу
 const program = new Command();
 
-// Настройка имени, описания, версии
+// создаём CLI-прогу
 program
-.name("cba")
-.description("Local-first AI CLI assistant that helps developers explore, understand, and navigate large codebases.")
-.version("0.1.0");
+  .name("cba")
+  .description("Local-first AI CLI assistant that helps developers explore, understand, and navigate large codebases.")
+  .version("0.1.0");
 
-// Регистрируем команду ask
+// Регистрируем команды
 registerAskCommand(program);
+registerScanCommand(program);
 
 // Запускаем разбор того что приходит в командную строку
 program.parse();

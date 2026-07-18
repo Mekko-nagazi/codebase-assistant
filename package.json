@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "tsx src/index.ts",
+    "scan": "tsx src/index.ts scan",
     "build": "tsc",
     "start": "node dist/index.js"
   },

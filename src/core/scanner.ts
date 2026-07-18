@@ -44,7 +44,7 @@ function filterProjectFiles(files: string[]): string[] {
 }
 
 // Сканер файловой системы
-export function scanFSProject(projectPath: string): string[] {
+export function scanProjectFiles(projectPath: string): string[] {
     const files: string[] = [];
 
     function scanDirectory(currentPath: string): void {
