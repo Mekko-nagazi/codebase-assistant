@@ -2,6 +2,7 @@
 import { Command } from "commander";
 import { registerAskCommand } from "./commands/ask.js";
 import { registerScanCommand } from "./commands/scan.js";
+import { registerSearchCommand } from "./commands/search.js";
 
 const program = new Command();
 
@@ -14,6 +15,7 @@ program
 // Регистрируем команды
 registerAskCommand(program);
 registerScanCommand(program);
+registerSearchCommand(program);
 
 // Запускаем разбор того что приходит в командную строку
 program.parse();
